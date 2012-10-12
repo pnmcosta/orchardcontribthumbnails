@@ -17,4 +17,6 @@ Usage 2 (URL):
 - Use url /Thumbnails?mediaPath={mediapathfordirectory}&name={filename}&width=100&height=100
 
 Futures:
-- Implement diferent resizing methods from the ImageResizer.net library
+- Implement diferent resizing methods from the ImageResizer.net library.
+- Thumbnail management via the dashboard, refresh, erase, etc.
+- Detect file changes and invalid cache.

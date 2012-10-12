@@ -24,7 +24,6 @@ namespace Contrib.Thumbnails.Services
         string GetThumbnail(string url, int width, int height);
         IStorageFile CreateThumbnail(string mediaPath, string name, int width, int height, bool force = false);
     }
-    [OrchardFeature("Nublr.Orchard.Features.Thumbnails")]
     public class ThumbnailsService : IThumbnailsService
     {
         private readonly IMediaService _mediaService;
@@ -76,17 +75,17 @@ namespace Contrib.Thumbnails.Services
             string thumbnailFileName = fileHash + fileExtension;
 
             return _cacheManager.Get(
-                        "Nublr.Thumbnails." + fileHash,
+                        "Contrib.Thumbnails." + fileHash,
                         ctx =>
                         {
-                            ctx.Monitor(_signals.When("Nublr.Thumbnails." + fileHash + ".Changed"));
+                            ctx.Monitor(_signals.When("Contrib.Thumbnails." + fileHash + ".Changed"));
                             WorkContext workContext = _wca.GetContext();
                             if (_mediaService.GetMediaFiles(ThumbnailsCacheMediaPath).Any(i => i.Name == thumbnailFileName))
                                 return _mediaService.GetPublicUrl(Combine(ThumbnailsCacheMediaPath, thumbnailFileName));
                             UrlHelper urlHelper = new UrlHelper(new RequestContext(workContext.HttpContext, new RouteData()));
                             return urlHelper.Action("Create", "Thumbnails", new
                                     {
-                                        area = "Nublr.Orchard.Features",
+                                        area = "Contrib.Thumbnails",
                                         mediaPath = mediaPath,
                                         name = name,
                                         width = width,
@@ -132,7 +131,7 @@ namespace Contrib.Thumbnails.Services
             }
 
             if (outputFile != imageFile)
-                _signals.Trigger("Nublr.Thumbnails." + fileHash + ".Changed");
+                _signals.Trigger("Contrib.Thumbnails." + fileHash + ".Changed");
 
             return outputFile;
         }

@@ -8,5 +8,5 @@ Description: Html helper class to use ImageResizer to resize media images.
 Features:
     Contrib.Thumbnails:
         Description: Html helper class to use ImageResizer to resize media images.
-		Category: Content
+		Category: Media
 		Dependencies: Orchard.Media

@@ -3,7 +3,7 @@ AntiForgery: enabled
 Author: Nublr
 Website: http://nublr.pt
 Version: 1.0
-OrchardVersion: 1.0
+OrchardVersion: 1.4
 Description: Html helper class to use ImageResizer to resize media images.
 Features:
     Contrib.Thumbnails:

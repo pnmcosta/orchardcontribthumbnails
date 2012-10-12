@@ -1,0 +1,12 @@
+﻿Name: Thumbnails
+AntiForgery: enabled
+Author: Nublr
+Website: http://nublr.pt
+Version: 1.0
+OrchardVersion: 1.0
+Description: Html helper class to use ImageResizer to resize media images.
+Features:
+    Contrib.Thumbnails:
+        Description: Html helper class to use ImageResizer to resize media images.
+		Category: Content
+		Dependencies: Orchard.Media

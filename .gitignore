@@ -1,6 +1,17 @@
 # Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
 bin
 obj
+App_Data
+!App_Data/Localization
+*.suo
+*.user
+*.sln.docstates
+
+# Windows image file caches
+Thumbs.db
+
+# Folder config file
+Desktop.ini
 
 # mstest test results
 TestResults
